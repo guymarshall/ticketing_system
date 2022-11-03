@@ -1,11 +1,28 @@
-use crate::ticket::Ticket;
+use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
-mod ticket;
+#[get("/")]
+async fn hello() -> impl Responder {
+    HttpResponse::Ok().body("Hello world!")
+}
 
-fn main() {
-    let new_ticket: Ticket = Ticket { ticket_id: 1, title: "A test ticket", status: "Closed" };
+#[post("/echo")]
+async fn echo(req_body: String) -> impl Responder {
+    HttpResponse::Ok().body(req_body)
+}
 
-    println!("ID: {}", new_ticket.get_ticket_id());
-    println!("Title: {}", new_ticket.get_title());
-    println!("Status: {}", new_ticket.get_status());
+async fn manual_hello() -> impl Responder {
+    HttpResponse::Ok().body("Hey there!")
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new()
+            .service(hello)
+            .service(echo)
+            .route("/hey", web::get().to(manual_hello))
+    })
+    .bind(("127.0.0.1", 8080))?
+    .run()
+    .await
 }
