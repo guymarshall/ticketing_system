@@ -3,13 +3,14 @@ pub struct Page<'a> {
     pub content: &'a str,
     pub script_js: &'a str
 }
-impl Ticket<'_> {
-    pub fn create_page(&self) -> &str {
-        let title: &'a str = self.title;
-        let content: &'a str = self.content;
-        let script_js: &'a str = self.script_js;
+impl Page<'_> {
+    pub fn create_page(&self) -> String {
+        let title: &str = self.title;
+        let content: &str = self.content;
+        let script_js: &str = self.script_js;
+        let app_name: &str = "Ticketing System";
 
-        let head_html: &'a str = "
+        let head_html: &str = "
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
@@ -18,26 +19,26 @@ impl Ticket<'_> {
             <script src=\"https://code.jquery.com/jquery-3.6.1.min.js\" integrity=\"sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=\" crossorigin=\"anonymous\"></script>
         ";
 
-        let body_html: &'a str = "
+        let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
                 <div class=\"container-fluid\">
-                    <a class=\"navbar-brand\" href=\"./index.php\">'.$app_name.'</a>
+                    <a class=\"navbar-brand\" href=\"./index.php\">{}</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
                     <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">
                         <ul class=\"navbar-nav flex-grow-1\">
                             <li class=\"nav-item\">
-                                <a class=\"nav-link "; if title == "Home" {body_html += "active";} body_html += "\" href=\"/pages/index.php\">Home</a>
+                                <a class=\"nav-link {}\" href=\"/pages/index.php\">Home</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link "; if title == "Todo" {body_html += "active";} body_html += "\" href=\"/pages/todo.php\">Todo</a>
+                                <a class=\"nav-link {}\" href=\"/pages/todo.php\">Todo</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link "; if title == "Collatz" {body_html += "active";} body_html += "\" href=\"/pages/collatz.php\">Collatz</a>
+                                <a class=\"nav-link {}\" href=\"/pages/collatz.php\">Collatz</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link "; if title == "Factorial" {body_html += "active";} body_html += "\" href=\"/pages/factorial.php\">Factorial</a>
+                                <a class=\"nav-link {}\" href=\"/pages/factorial.php\">Factorial</a>
                             </li>
                         </ul>
                     </div>
@@ -45,24 +46,34 @@ impl Ticket<'_> {
             </nav>
             <div class=\"container\">
                 <main role=\"main\" class=\"pb-3\">
-                    " + content + "
+                    {}
                 </main>
             </div>
-        ";
+        ",
+        app_name,
+        (if title == "Home" {"active"} else {""}),
+        (if title == "Todo" {"active"} else {""}),
+        (if title == "Collatz" {"active"} else {""}),
+        (if title == "Factorial" {"active"} else {""}),
+        content};
 
-        let template_html: &'a str = "
+        let template_html: String = format!{"
             <!DOCTYPE html>
             <html lang=\"en\">
             <head>
-                " + head_html + "
-                <title>" + title + "</title>
+                {}
+                <title>{}</title>
             </head>
             <body>
-                " + body_html + "
-                <script type=\"text/javascript\">" + script_js + "</script>
+                {}
+                <script type=\"text/javascript\">{}</script>
             </body>
             </html>
-        ";
+        ",
+        head_html,
+        title,
+        body_html,
+        script_js};
 
         template_html
     }
