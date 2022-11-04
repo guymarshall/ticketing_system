@@ -1,23 +1,23 @@
-pub struct Page<'a> {
-    pub title: &'a str,
-    pub content: &'a str,
-    pub script_js: &'a str
+pub struct Page {
+    pub title: String,
+    pub content: String,
+    pub script_js: String
 }
-impl Page<'_> {
+impl Page {
     pub fn create_page(&self) -> String {
-        let title: &str = self.title;
-        let content: &str = self.content;
-        let script_js: &str = self.script_js;
-        let app_name: &str = "Ticketing System";
+        let title: &String = &self.title;
+        let content: &String = &self.content;
+        let script_js: &String = &self.script_js;
+        let app_name: String = "Ticketing System".to_string();
 
-        let head_html: &str = "
+        let head_html: String = String::from("
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
             <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
             <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
             <script src=\"https://code.jquery.com/jquery-3.6.1.min.js\" integrity=\"sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=\" crossorigin=\"anonymous\"></script>
-        ";
+        ");
 
         let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
