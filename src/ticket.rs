@@ -1,9 +1,9 @@
-pub struct Ticket<'a> {
+pub struct Ticket {
     pub ticket_id: i32,
-    pub title: &'a str,
-    pub status: &'a str
+    pub title: String,
+    pub status: String
 }
-impl Ticket<'_> {
+impl Ticket {
     pub fn get_ticket_id(&self) -> i32 {
         self.ticket_id
     }
