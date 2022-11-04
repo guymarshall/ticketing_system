@@ -1,11 +1,11 @@
-pub struct User<'a> {
+pub struct User {
     pub user_id: i32,
-    pub forename: &'a str,
-    pub surname: &'a str,
-    pub username: &'a str,
-    pub password: &'a str
+    pub forename: String,
+    pub surname: String,
+    pub username: String,
+    pub password: String
 }
-impl User<'_> {
+impl User {
     pub fn get_user_id(&self) -> i32 {
         self.user_id
     }
