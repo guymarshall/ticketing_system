@@ -4,7 +4,8 @@ use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 #[get("/")]
 async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
+    let hello_page: page::Page = page::Page {title: "Hello Page".to_string(), content: "<p>This is some text! And <b>this</b> word is bold!</p><br><button class=\"btn btn-primary\" onclick=\"alert('This button was clicked!');\">Click me!</button>".to_string(), script_js: "".to_string()};
+    HttpResponse::Ok().body(hello_page.create_page())
 }
 
 #[post("/echo")]
