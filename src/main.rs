@@ -8,6 +8,12 @@ async fn hello() -> impl Responder {
     HttpResponse::Ok().body(hello_page.create_page())
 }
 
+// #[get("/anotherpage")]
+async fn goodbye() -> impl Responder {
+    let goodbye_page: page::Page = page::Page {title: "Goodbye Page".to_string(), content: "GOODBYE".to_string(), script_js: "".to_string()};
+    HttpResponse::Ok().body(goodbye_page.create_page())
+}
+
 #[post("/echo")]
 async fn echo(req_body: String) -> impl Responder {
     HttpResponse::Ok().body(req_body)
@@ -24,6 +30,7 @@ async fn main() -> std::io::Result<()> {
             .service(hello)
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
+            .route("/goodbye", web::get().to(goodbye))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
