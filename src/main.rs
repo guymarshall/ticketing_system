@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 mod page;
 
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
