@@ -5,11 +5,19 @@ mod page;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 async fn hello() -> impl Responder {
-    let hello_page: page::Page = page::Page {title: "Hello Page".to_string(), content: "<p>This is some text! And <b>this</b> word is bold!</p><br><button class=\"btn btn-primary\" onclick=\"alert('This button was clicked!');\">Click me!</button>".to_string(), script_js: "".to_string()};
+    let title = "Hello Page";
+    let html = "
+        <p>This is some text! And <b>this</b> word is bold!</p>
+        <br>
+        <button class=\"btn btn-primary\" onclick=\"alert('This button was clicked!');\">Click me!</button>
+    ";
+    let js = "";
+    let hello_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
     HttpResponse::Ok().body(hello_page.create_page())
 }
 
 pub async fn add_ticket() -> impl Responder {
+    let title = "Add Ticket";
     let html = "
         <form method=\"post\">
             <label for=\"title\">Title: </label>
@@ -24,7 +32,7 @@ pub async fn add_ticket() -> impl Responder {
         });
     ";
 
-    let add_ticket_page: page::Page = page::Page {title: "Add Ticket".to_string(), content: html.to_string(), script_js: js.to_string()};
+    let add_ticket_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
     HttpResponse::Ok().body(add_ticket_page.create_page())
 }
 
