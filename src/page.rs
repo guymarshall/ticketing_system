@@ -22,23 +22,23 @@ impl Page {
         let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
                 <div class=\"container-fluid\">
-                    <a class=\"navbar-brand\" href=\"./index.php\">{}</a>
+                    <a class=\"navbar-brand\" href=\"./tickets\">{}</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
                     <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">
                         <ul class=\"navbar-nav flex-grow-1\">
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/pages/index.php\">Home</a>
+                                <a class=\"nav-link {}\" href=\"/tickets\">Tickets</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/pages/todo.php\">Todo</a>
+                                <a class=\"nav-link {}\" href=\"/add_ticket\">Add</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/pages/collatz.php\">Collatz</a>
+                                <a class=\"nav-link {}\" href=\"/collatz.php\">Collatz</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/pages/factorial.php\">Factorial</a>
+                                <a class=\"nav-link {}\" href=\"/factorial.php\">Factorial</a>
                             </li>
                         </ul>
                     </div>
