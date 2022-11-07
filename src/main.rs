@@ -5,20 +5,20 @@ mod page;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 async fn hello() -> impl Responder {
-    let title = "Hello Page";
-    let html = "
+    let title: &str = "Hello Page";
+    let html: &str = "
         <p>This is some text! And <b>this</b> word is bold!</p>
         <br>
         <button class=\"btn btn-primary\" onclick=\"alert('This button was clicked!');\">Click me!</button>
     ";
-    let js = "";
+    let js: &str = "";
     let hello_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
     HttpResponse::Ok().body(hello_page.create_page())
 }
 
 pub async fn add_ticket() -> impl Responder {
-    let title = "Add Ticket";
-    let html = "
+    let title: &str = "Add Ticket";
+    let html: &str = "
         <form method=\"post\">
             <label for=\"title\">Title: </label>
             <input type=\"text\" id=\"title\" name=\"title\">
@@ -26,7 +26,7 @@ pub async fn add_ticket() -> impl Responder {
             <input type=\"submit\" id=\"save\" name=\"save\">
         </form>
     ";
-    let js = "
+    let js: &str = "
         (\"#save\").click(() => {
             alert(\"Saved!\");
         });
