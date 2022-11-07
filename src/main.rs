@@ -2,7 +2,7 @@
 
 mod page;
 
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 
 async fn tickets() -> impl Responder {
     let title: &str = "Tickets";
