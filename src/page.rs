@@ -32,7 +32,7 @@ impl Page {
                                 <a class=\"nav-link {}\" href=\"/all\">All</a>
                             </li>
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/add_ticket\">Add</a>
+                                <a class=\"nav-link {}\" href=\"/new\">New</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a class=\"nav-link {}\" href=\"/collatz.php\">Collatz</a>

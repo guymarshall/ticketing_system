@@ -16,8 +16,8 @@ async fn all() -> impl Responder {
     HttpResponse::Ok().body(all_page.create_page())
 }
 
-async fn add_ticket() -> impl Responder {
-    let title: &str = "Add Ticket";
+async fn new() -> impl Responder {
+    let title: &str = "New";
     let html: &str = "
         <form method=\"post\">
             <label for=\"title\">Title: </label>
@@ -32,8 +32,8 @@ async fn add_ticket() -> impl Responder {
         });
     ";
 
-    let add_ticket_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
-    HttpResponse::Ok().body(add_ticket_page.create_page())
+    let new_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
+    HttpResponse::Ok().body(new_page.create_page())
 }
 
 #[actix_web::main]
@@ -41,7 +41,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .route("/all", web::get().to(all))
-            .route("/add_ticket", web::get().to(add_ticket))
+            .route("/new", web::get().to(new))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
