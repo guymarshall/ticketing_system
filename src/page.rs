@@ -59,19 +59,15 @@ impl Page {
             <!DOCTYPE html>
             <html lang=\"en\">
             <head>
-                {}
-                <title>{}</title>
+                {head_html}
+                <title>{title}</title>
             </head>
             <body>
-                {}
-                <script type=\"text/javascript\">{}</script>
+                {body_html}
+                <script type=\"text/javascript\">{script_js}</script>
             </body>
             </html>
-        ",
-        head_html,
-        title,
-        body_html,
-        script_js};
+        "};
 
         template_html
     }
