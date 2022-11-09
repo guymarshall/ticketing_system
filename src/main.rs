@@ -18,9 +18,9 @@ async fn root() -> impl Responder {
 async fn all() -> impl Responder {
     let title: &str = "All";
     let html: &str = "
-        <p>This is some text! And <b>this</b> word is bold!</p>
-        <br>
-        <button class=\"btn btn-primary\" onclick=\"alert('This button was clicked!');\">Click me!</button>
+        <p>
+            This is where a table of tickets will go.
+        </p>
     ";
     let js: &str = "";
     let all_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
