@@ -29,7 +29,7 @@ impl Page {
                     <div class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\">
                         <ul class=\"navbar-nav flex-grow-1\">
                             <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/tickets\">Tickets</a>
+                                <a class=\"nav-link {}\" href=\"/all\">All</a>
                             </li>
                             <li class=\"nav-item\">
                                 <a class=\"nav-link {}\" href=\"/add_ticket\">Add</a>
