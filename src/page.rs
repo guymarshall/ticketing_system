@@ -50,8 +50,8 @@ impl Page {
                 </main>
             </div>
         ",
-        (if title == "Home" {"active"} else {""}),
-        (if title == "Todo" {"active"} else {""}),
+        (if title == "All" {"active"} else {""}),
+        (if title == "New" {"active"} else {""}),
         (if title == "Collatz" {"active"} else {""}),
         (if title == "Factorial" {"active"} else {""})};
 
