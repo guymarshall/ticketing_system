@@ -13,15 +13,17 @@ impl Page {
         let app_name: String = "Ticketing System".to_string();
 
         let bootstrap_css: String = fs::read_to_string("bootstrap.css").expect("Unable to read file");
+        let bootstrap_js: String = fs::read_to_string("bootstrap.bundle.js").expect("Unable to read file");
+        let jquery_js: String = fs::read_to_string("jquery-3.6.1.js").expect("Unable to read file");
 
         let head_html: String = format!{"
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
             <style>{}</style>
-            <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
-            <script src=\"https://code.jquery.com/jquery-3.6.1.min.js\" integrity=\"sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=\" crossorigin=\"anonymous\"></script>
-        ", bootstrap_css};
+            <script>{}</script>
+            <script>{}</script>
+        ", bootstrap_css, bootstrap_js, jquery_js};
 
         let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
