@@ -46,15 +46,14 @@ impl Page {
             </nav>
             <div class=\"container\">
                 <main role=\"main\" class=\"pb-3\">
-                    {}
+                    {content}
                 </main>
             </div>
         ",
         (if title == "Home" {"active"} else {""}),
         (if title == "Todo" {"active"} else {""}),
         (if title == "Collatz" {"active"} else {""}),
-        (if title == "Factorial" {"active"} else {""}),
-        content};
+        (if title == "Factorial" {"active"} else {""})};
 
         let template_html: String = format!{"
             <!DOCTYPE html>
