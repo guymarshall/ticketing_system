@@ -40,7 +40,7 @@ async fn add_ticket() -> impl Responder {
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
-            .route("/tickets", web::get().to(all))
+            .route("/all", web::get().to(all))
             .route("/add_ticket", web::get().to(add_ticket))
     })
     .bind(("127.0.0.1", 8080))?
