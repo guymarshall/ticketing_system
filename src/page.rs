@@ -12,9 +12,9 @@ impl Page {
         let script_js: &String = &self.script_js;
         let app_name: String = "Ticketing System".to_string();
 
-        let bootstrap_css: String = fs::read_to_string("bootstrap.css").expect("Unable to read file");
-        let bootstrap_js: String = fs::read_to_string("bootstrap.bundle.js").expect("Unable to read file");
-        let jquery_js: String = fs::read_to_string("jquery-3.6.1.js").expect("Unable to read file");
+        let bootstrap_css: String = fs::read_to_string("static/css/bootstrap.css").expect("Unable to read file");
+        let bootstrap_js: String = fs::read_to_string("static/js/bootstrap.bundle.js").expect("Unable to read file");
+        let jquery_js: String = fs::read_to_string("static/js/jquery-3.6.1.js").expect("Unable to read file");
 
         let head_html: String = format!{"
             <meta charset=\"UTF-8\">
