@@ -20,10 +20,10 @@ impl Page {
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-            <style>{}</style>
-            <script>{}</script>
-            <script>{}</script>
-        ", bootstrap_css, bootstrap_js, jquery_js};
+            <style>{bootstrap_css}</style>
+            <script>{bootstrap_js}</script>
+            <script>{jquery_js}</script>
+        "};
 
         let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
