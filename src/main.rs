@@ -2,7 +2,18 @@
 
 mod page;
 
-use actix_web::{web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
+
+#[get("/")]
+async fn root() -> impl Responder {
+    let title: &str = "ACCESS DENIED";
+    let html: &str = "
+        <b style=\"color: red;\">DIRECTORY ACCESS IS FORBIDDEN</b>
+    ";
+    let js: &str = "";
+    let root_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
+    HttpResponse::Ok().body(root_page.create_page())
+}
 
 async fn all() -> impl Responder {
     let title: &str = "All";
@@ -40,6 +51,7 @@ async fn new() -> impl Responder {
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
+            .service(root)
             .route("/all", web::get().to(all))
             .route("/new", web::get().to(new))
     })
