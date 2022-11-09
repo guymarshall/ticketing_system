@@ -34,12 +34,6 @@ impl Page {
                             <li class=\"nav-item\">
                                 <a class=\"nav-link {}\" href=\"/new\">New</a>
                             </li>
-                            <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/collatz.php\">Collatz</a>
-                            </li>
-                            <li class=\"nav-item\">
-                                <a class=\"nav-link {}\" href=\"/factorial.php\">Factorial</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -51,9 +45,7 @@ impl Page {
             </div>
         ",
         (if title == "All" {"active"} else {""}),
-        (if title == "New" {"active"} else {""}),
-        (if title == "Collatz" {"active"} else {""}),
-        (if title == "Factorial" {"active"} else {""})};
+        (if title == "New" {"active"} else {""})};
 
         let template_html: String = format!{"
             <!DOCTYPE html>
