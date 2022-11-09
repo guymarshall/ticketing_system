@@ -16,7 +16,7 @@ async fn tickets() -> impl Responder {
     HttpResponse::Ok().body(tickets_page.create_page())
 }
 
-pub async fn add_ticket() -> impl Responder {
+async fn add_ticket() -> impl Responder {
     let title: &str = "Add Ticket";
     let html: &str = "
         <form method=\"post\">
