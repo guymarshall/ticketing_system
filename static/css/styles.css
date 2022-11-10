@@ -1,3 +1,4 @@
 .btn:active {
-    transform: translateY(4px);
+    transform: scale(1.05);
+
 }
