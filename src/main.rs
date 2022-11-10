@@ -67,11 +67,7 @@ async fn new() -> impl Responder {
             <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
         </form>
     ";
-    let js: &str = "
-        (\"#save\").click(() => {
-            alert(\"Saved!\");
-        });
-    ";
+    let js: &str = "";
 
     let new_page: page::Page = page::Page {title: title.to_string(), content: html.to_string(), script_js: js.to_string()};
     HttpResponse::Ok().body(new_page.create_page())
