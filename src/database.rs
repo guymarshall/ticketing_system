@@ -29,3 +29,26 @@ impl Database {
         // return response as String
     }
 }
+
+fn init_database() {
+    let user_table_sql: String = "
+        CREATE TABLE users (
+            userID INTEGER PRIMARY KEY NOT NULL,
+            forename TEXT NOT NULL,
+            surname TEXT NOT NULL,
+            position TEXT NOT NULL,
+            isDeleted BOOLEAN NOT NULL DEFAULT '0'
+        )
+    ".to_string();
+    
+    let ticket_table_sql: String = "
+        CREATE TABLE tickets (
+            ticketID INTEGER PRIMARY KEY NOT NULL,
+            title TEXT NOT NULL,
+            name TEXT NOT NULL,
+            description TEXT NOT NULL,
+            comments TEXT NOT NULL,
+            isDeleted BOOLEAN NOT NULL DEFAULT '0'
+        )
+    ".to_string();
+}
