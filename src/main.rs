@@ -31,26 +31,39 @@ async fn new() -> impl Responder {
     let title: &str = "New";
     let html: &str = "
         <form method=\"POST\">
-            <label for=\"title\">Title: </label>
-            <input type=\"text\" name=\"title\" id=\"title\">
-            <br>
-            <label for=\"username\">Username: </label>
-            <input type=\"text\" name=\"username\" id=\"username\">
-            <br>
-            <label for=\"description\">Description: </label>
-            <input type=\"text\" name=\"description\" id=\"description\">
-            <br>
-            <label for=\"priority\">Priority: </label>
-            <select name=\"priority\" id=\"priority\">
-                <option value=\"low\">Low</option>
-                <option value=\"medium\">Medium</option>
-                <option value=\"high\">High</option>
-                <option value=\"critical\">Critical</option>
-            </select>
-            <br>
-            <label for=\"comments\">Comments: </label>
-            <input type=\"text\" name=\"comments\" id=\"comments\">
-            <br>
+            <div class=\"form-group row\">
+                <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
+                <div class=\"col-sm-10 selectFeedback\">
+                    <input type=\"text\" name=\"title\" id=\"title\">
+                </div>
+            </div>
+            <div class=\"form-group row\">
+                <label for=\"username\" class=\"col-sm-2 control-label\">Username: </label>
+                <div class=\"col-sm-4 selectFeedback\">
+                    <input type=\"text\" name=\"username\" id=\"username\">
+                </div>
+                <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
+                <div class=\"col-sm-4 selectFeedback\">
+                    <select name=\"priority\" id=\"priority\">
+                        <option value=\"low\">Low</option>
+                        <option value=\"medium\">Medium</option>
+                        <option value=\"high\">High</option>
+                        <option value=\"critical\">Critical</option>
+                    </select>
+                </div>
+            </div>
+            <div class=\"form-group row\">
+                <label for=\"description\" class=\"col-sm-2 control-label\">Description: </label>
+                <div class=\"col-sm-10 selectFeedback\">
+                    <input type=\"text\" name=\"description\" id=\"description\">
+                </div>
+            </div>
+            <div class=\"form-group row\">
+                <label for=\"comments\" class=\"col-sm-2 control-label\">Comments: </label>
+                <div class=\"col-sm-10 selectFeedback\">
+                    <input type=\"text\" name=\"comments\" id=\"comments\">
+                </div>
+            </div>
             <input type=\"submit\" value=\"Submit\">
         </form>
     ";
