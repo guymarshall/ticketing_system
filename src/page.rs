@@ -12,6 +12,7 @@ impl Page {
         let script_js: &String = &self.script_js;
         let app_name: String = "Ticketing System".to_string();
 
+        let my_css: String = fs::read_to_string("static/css/styles.css").expect("Unable to read file");
         let bootstrap_css: String = fs::read_to_string("static/css/bootstrap.css").expect("Unable to read file");
         let bootstrap_js: String = fs::read_to_string("static/js/bootstrap.bundle.js").expect("Unable to read file");
         let jquery_js: String = fs::read_to_string("static/js/jquery-3.6.1.js").expect("Unable to read file");
@@ -20,6 +21,7 @@ impl Page {
             <meta charset=\"UTF-8\">
             <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
             <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+            <style>{my_css}</style>
             <style>{bootstrap_css}</style>
             <script>{bootstrap_js}</script>
             <script>{jquery_js}</script>
