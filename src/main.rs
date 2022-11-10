@@ -31,40 +31,43 @@ async fn new() -> impl Responder {
     let title: &str = "New";
     let html: &str = "
         <form method=\"POST\">
-            <div class=\"form-group row\">
-                <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
-                <div class=\"col-sm-10 selectFeedback\">
-                    <input type=\"text\" name=\"title\" id=\"title\">
+            <fieldset>
+                <legend>Add ticket</legend>
+                <div class=\"form-group row\">
+                    <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
+                    <div class=\"col-sm-10 selectFeedback\">
+                        <input type=\"text\" name=\"title\" id=\"title\">
+                    </div>
                 </div>
-            </div>
-            <div class=\"form-group row\">
-                <label for=\"username\" class=\"col-sm-2 control-label\">Username: </label>
-                <div class=\"col-sm-4 selectFeedback\">
-                    <input type=\"text\" name=\"username\" id=\"username\">
+                <div class=\"form-group row\">
+                    <label for=\"username\" class=\"col-sm-2 control-label\">Username: </label>
+                    <div class=\"col-sm-4 selectFeedback\">
+                        <input type=\"text\" name=\"username\" id=\"username\">
+                    </div>
+                    <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
+                    <div class=\"col-sm-4 selectFeedback\">
+                        <select name=\"priority\" id=\"priority\">
+                            <option value=\"low\">Low</option>
+                            <option value=\"medium\">Medium</option>
+                            <option value=\"high\">High</option>
+                            <option value=\"critical\">Critical</option>
+                        </select>
+                    </div>
                 </div>
-                <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
-                <div class=\"col-sm-4 selectFeedback\">
-                    <select name=\"priority\" id=\"priority\">
-                        <option value=\"low\">Low</option>
-                        <option value=\"medium\">Medium</option>
-                        <option value=\"high\">High</option>
-                        <option value=\"critical\">Critical</option>
-                    </select>
+                <div class=\"form-group row\">
+                    <label for=\"description\" class=\"col-sm-2 control-label\">Description: </label>
+                    <div class=\"col-sm-10 selectFeedback\">
+                        <input type=\"text\" name=\"description\" id=\"description\">
+                    </div>
                 </div>
-            </div>
-            <div class=\"form-group row\">
-                <label for=\"description\" class=\"col-sm-2 control-label\">Description: </label>
-                <div class=\"col-sm-10 selectFeedback\">
-                    <input type=\"text\" name=\"description\" id=\"description\">
+                <div class=\"form-group row\">
+                    <label for=\"comments\" class=\"col-sm-2 control-label\">Comments: </label>
+                    <div class=\"col-sm-10 selectFeedback\">
+                        <input type=\"text\" name=\"comments\" id=\"comments\">
+                    </div>
                 </div>
-            </div>
-            <div class=\"form-group row\">
-                <label for=\"comments\" class=\"col-sm-2 control-label\">Comments: </label>
-                <div class=\"col-sm-10 selectFeedback\">
-                    <input type=\"text\" name=\"comments\" id=\"comments\">
-                </div>
-            </div>
-            <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
+                <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
+            </fieldset>
         </form>
     ";
     let js: &str = "";
