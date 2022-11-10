@@ -40,9 +40,9 @@ async fn new() -> impl Responder {
                     </div>
                 </div>
                 <div class=\"form-group row\">
-                    <label for=\"username\" class=\"col-sm-2 control-label\">Username: </label>
+                    <label for=\"name\" class=\"col-sm-2 control-label\">Name: </label>
                     <div class=\"col-sm-4 selectFeedback\">
-                        <input type=\"text\" name=\"username\" id=\"username\">
+                        <input type=\"text\" name=\"name\" id=\"name\">
                     </div>
                     <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
                     <div class=\"col-sm-4 selectFeedback\">
