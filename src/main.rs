@@ -64,7 +64,7 @@ async fn new() -> impl Responder {
                     <input type=\"text\" name=\"comments\" id=\"comments\">
                 </div>
             </div>
-            <input type=\"submit\" value=\"Submit\">
+            <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
         </form>
     ";
     let js: &str = "
