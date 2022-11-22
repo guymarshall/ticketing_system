@@ -35,17 +35,17 @@ async fn new() -> impl Responder {
                 <legend>Add ticket</legend>
                 <div class=\"form-group row\">
                     <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
-                    <div class=\"col-sm-10 selectFeedback\">
+                    <div class=\"col-sm-4 selectFeedback\">
                         <input type=\"text\" name=\"title\" id=\"title\">
                     </div>
-                </div>
-                <div class=\"form-group row\">
                     <label for=\"name\" class=\"col-sm-2 control-label\">Name: </label>
                     <div class=\"col-sm-4 selectFeedback\">
                         <input type=\"text\" name=\"name\" id=\"name\">
                     </div>
+                </div>
+                <div class=\"form-group row\">
                     <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
-                    <div class=\"col-sm-4 selectFeedback\">
+                    <div class=\"col-sm-10 selectFeedback\">
                         <select name=\"priority\" id=\"priority\">
                             <option value=\"low\">Low</option>
                             <option value=\"medium\">Medium</option>
