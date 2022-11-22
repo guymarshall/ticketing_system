@@ -36,17 +36,17 @@ async fn new() -> impl Responder {
                 <div class=\"form-group row\">
                     <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
                     <div class=\"col-sm-4 selectFeedback\">
-                        <input type=\"text\" name=\"title\" id=\"title\">
+                        <input class=\"form-control input-sm\" type=\"text\" name=\"title\" id=\"title\">
                     </div>
                     <label for=\"name\" class=\"col-sm-2 control-label\">Name: </label>
                     <div class=\"col-sm-4 selectFeedback\">
-                        <input type=\"text\" name=\"name\" id=\"name\">
+                        <input class=\"form-control input-sm\" type=\"text\" name=\"name\" id=\"name\">
                     </div>
                 </div>
                 <div class=\"form-group row\">
                     <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
-                    <div class=\"col-sm-10 selectFeedback\">
-                        <select name=\"priority\" id=\"priority\">
+                    <div class=\"col-sm-4 selectFeedback\">
+                        <select class=\"form-control input-sm\" name=\"priority\" id=\"priority\">
                             <option value=\"low\">Low</option>
                             <option value=\"medium\">Medium</option>
                             <option value=\"high\">High</option>
@@ -57,13 +57,13 @@ async fn new() -> impl Responder {
                 <div class=\"form-group row\">
                     <label for=\"description\" class=\"col-sm-2 control-label\">Description: </label>
                     <div class=\"col-sm-10 selectFeedback\">
-                        <input type=\"text\" name=\"description\" id=\"description\">
+                        <textarea class=\"form-control input-sm\" name=\"description\" id=\"description\" rows=\"4\" style=\"overflow: auto; resize: none\"></textarea>
                     </div>
                 </div>
                 <div class=\"form-group row\">
                     <label for=\"comments\" class=\"col-sm-2 control-label\">Comments: </label>
                     <div class=\"col-sm-10 selectFeedback\">
-                        <input type=\"text\" name=\"comments\" id=\"comments\">
+                        <textarea class=\"form-control input-sm\" name=\"comments\" id=\"comments\" rows=\"4\" style=\"overflow: auto; resize: none\"></textarea>
                     </div>
                 </div>
             </fieldset>
