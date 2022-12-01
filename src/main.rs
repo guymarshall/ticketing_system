@@ -31,7 +31,7 @@ async fn new() -> impl Responder {
     let title: &str = "New";
     let html: &str = "
         <form method=\"POST\">
-            <div class=\"form-group row\">
+            <div class=\"form-group row p-2\">
                 <label for=\"title\" class=\"col-sm-2 control-label\">Title: </label>
                 <div class=\"col-sm-4\">
                     <input class=\"form-control\" type=\"text\" name=\"title\" id=\"title\">
@@ -41,7 +41,7 @@ async fn new() -> impl Responder {
                     <input class=\"form-control\" type=\"text\" name=\"name\" id=\"name\">
                 </div>
             </div>
-            <div class=\"form-group row\">
+            <div class=\"form-group row p-2\">
                 <label for=\"priority\" class=\"col-sm-2 control-label\">Priority: </label>
                 <div class=\"col-sm-4\">
                     <select class=\"form-control\" name=\"priority\" id=\"priority\">
@@ -52,13 +52,13 @@ async fn new() -> impl Responder {
                     </select>
                 </div>
             </div>
-            <div class=\"form-group row\">
+            <div class=\"form-group row p-2\">
                 <label for=\"description\" class=\"col-sm-2 control-label\">Description: </label>
                 <div class=\"col-sm-10\">
                     <textarea class=\"form-control\" name=\"description\" id=\"description\" rows=\"4\" style=\"overflow: auto; resize: none\"></textarea>
                 </div>
             </div>
-            <div class=\"form-group row\">
+            <div class=\"form-group row p-2\">
                 <label for=\"comments\" class=\"col-sm-2 control-label\">Comments: </label>
                 <div class=\"col-sm-10\">
                     <textarea class=\"form-control\" name=\"comments\" id=\"comments\" rows=\"4\" style=\"overflow: auto; resize: none\"></textarea>
