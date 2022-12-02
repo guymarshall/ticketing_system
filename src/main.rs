@@ -64,7 +64,12 @@ async fn new() -> impl Responder {
                     <textarea class=\"form-control\" name=\"comments\" id=\"comments\" rows=\"4\" style=\"overflow: auto; resize: none\"></textarea>
                 </div>
             </div>
-            <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
+            <div class=\"form-group row p-2\">
+                <div class=\"col-sm-11\"></div>
+                <div class=\"col-sm-1\">
+                    <button type=\"button\" class=\"btn btn-outline-primary\">Submit</button>
+                </div>
+            </div>
         </form>
     ";
     let js: &str = "";
