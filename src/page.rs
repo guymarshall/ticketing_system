@@ -30,7 +30,7 @@ impl Page {
         let body_html: String = format!{"
             <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom mb-3\">
                 <div class=\"container-fluid\">
-                    <a class=\"navbar-brand\" href=\"./tickets\">{app_name}</a>
+                    <a class=\"navbar-brand\" href=\"./all\">{app_name}</a>
                     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\".navbar-collapse\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                         <span class=\"navbar-toggler-icon\"></span>
                     </button>
