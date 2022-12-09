@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 pub struct Ticket {
     pub ticket_id: i32,
     pub title: String,

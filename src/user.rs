@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 pub struct User {
     pub user_id: i32,
     pub forename: String,

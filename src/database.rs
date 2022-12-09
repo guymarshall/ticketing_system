@@ -1,3 +1,5 @@
+#![forbid(unsafe_code)]
+
 pub struct Database {
     pub db_username: String,
     pub db_password: String,
